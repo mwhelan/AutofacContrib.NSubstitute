@@ -38,14 +38,15 @@ namespace AutofacContrib.NSubstitute.Tests
             Assert.AreSame(autoSub.Dependency<IDependency>(), sut.DependencyAsProperty);
         }
 
-        [Test]
-        public void ShouldThrowIfNonDependencyRequested()
-        {
-            var autoSub = new AutoSub<ConcreteClassWithOneDependency>();
-            var sut = autoSub.SUT();
+        // Undecided as to whether or not this behaviour is desirable
+        //[Test]
+        //public void ShouldThrowIfNonDependencyRequested()
+        //{
+        //    var autoSub = new AutoSub<ConcreteClassWithOneDependency>();
+        //    var sut = autoSub.SUT();
 
-            Assert.IsNull(autoSub.Dependency<IUnrelatedDependency>());
-        }
+        //    Assert.IsNull(autoSub.Dependency<IUnrelatedDependency>());
+        //}
 
         [Test]
         public void DependencyShouldReturnValueWhenSet()

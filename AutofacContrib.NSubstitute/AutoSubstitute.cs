@@ -27,7 +27,7 @@ namespace AutofacContrib.NSubstitute
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
+            builder.RegisterSource(new ConcreteTypesNotAlreadyRegisteredSource());
             builder.RegisterSource(new NSubstituteRegistrationHandler());
 
             Container = builder.Build();
@@ -41,7 +41,7 @@ namespace AutofacContrib.NSubstitute
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
+            builder.RegisterSource(new ConcreteTypesNotAlreadyRegisteredSource());
             builder.RegisterSource(new NSubstituteRegistrationHandler());
             
             builderModifier(builder);
